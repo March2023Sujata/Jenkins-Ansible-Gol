@@ -3,6 +3,6 @@ packages:
   - openjdk-8-jdk
   - tomcat9
 gol: gameoflife.war
-gol_url: /home/devops/workspace/gol/game-of-life/gameoflife-web/target/gameoflife.war
+gol_url: /home/devops/workspace/GOL/game-of-life/gameoflife-web/target/gameoflife.war
 tomcat_dest: /var/lib/tomcat9/webapps/gameoflife.war
 tomcat9_service: tomcat9
