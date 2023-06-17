@@ -9,6 +9,5 @@
   ansible.builtin.copy:
     src: "{{ gol_url }}"
     dest: "{{ tomcat_dest }}"
-    remote_src: yes
   notify:
     - restart tomcat9
