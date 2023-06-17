@@ -1,0 +1,23 @@
+---
+- name: Deploy Game of life
+  become: yes  
+  host: all
+  tasks:
+    - name: Install java 8 & tomcat 9
+      ansible.builtin.apt:
+        name: "{{ packages }}"
+        update_cache: yes  
+        state: present
+
+    - name: Download game of life
+      ansible.builtin.get_url:
+        url: "{{ gol_url }}"
+        dest: "{{ tomcat_dest }}"
+      notify:
+        - restart tomcat9
+  
+  handlers:
+    - name: restart tomcat9
+      ansible.builtin.service:
+        name: "{{ tomcat9_service }}"
+        state: restarted
