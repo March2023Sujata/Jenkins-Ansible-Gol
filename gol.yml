@@ -1,6 +1,6 @@
 ---
 - name: Deploy Game of life
   become: yes  
-  host: all
+  hosts: all
   roles:
     - gol
