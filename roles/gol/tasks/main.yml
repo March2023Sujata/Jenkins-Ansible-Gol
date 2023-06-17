@@ -6,8 +6,8 @@
     state: present
 
 - name: Download game of life
-  ansible.builtin.get_url:
-    url: "{{ gol_url }}"
+  ansible.builtin.copy:
+    src: "{{ gol_url }}"
     dest: "{{ tomcat_dest }}"
   notify:
     - restart tomcat9
